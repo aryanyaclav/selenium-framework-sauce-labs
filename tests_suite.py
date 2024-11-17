@@ -1,6 +1,7 @@
 import unittest
 
-test_modules = ["tests.login_test"]
+test_modules = ["tests.login_test", 
+                "tests.add_to_cart"]
 
 suite = unittest.TestSuite()
 
@@ -10,6 +11,6 @@ for module in test_modules:
         suitefn = getattr(mod, 'suite')
         suite.addTest(suitefn())
     except (ImportError, AttributeError):
-            suite.addTest(unittest.defaultTestLoader.loadTestsFromName(module))
+        suite.addTest(unittest.defaultTestLoader.loadTestsFromName(module))
 
 unittest.TextTestRunner().run(suite)
