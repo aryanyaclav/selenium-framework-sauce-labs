@@ -2,7 +2,8 @@ import unittest
 import HtmlTestRunner
 
 test_modules = ["tests.login_test", 
-                "tests.add_to_cart"]
+                "tests.add_to_cart",
+                "tests.logout_test"]
 
 suite = unittest.TestSuite()
 

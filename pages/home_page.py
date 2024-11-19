@@ -20,6 +20,14 @@ class HomePage(pages_selectors.home_page_selectors.HomePageSelectors):
         logging.info("Item added to cart")
         self.driver_func_lib.is_elelement_visible(self.remove_from_cart_button)
         logging.info("Remove button is visible")
+    
+    def logout(self):
+        self.driver_func_lib.assert_and_click(self.navbar_button)
+        logging.info("Opened Navbar")
+        self.driver_func_lib.assert_and_click(self.logout_button)
+        logging.info("Logged out")
+        self.driver_func_lib.is_elelement_visible(self.login_button)
+        logging.info("Login button is visible")
 
 
     
