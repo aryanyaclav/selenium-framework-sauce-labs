@@ -1,11 +1,16 @@
 from selenium.webdriver.common.by import By
-import pages_selectors.login_page_selectors
 
-class HomePageSelectors(pages_selectors.login_page_selectors.LoginPage_selectors):
+class Selectors():
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
 
+        #login page selectors
+        self.username_textbox = (By.ID, "user-name")
+        self.password_textbox = (By.ID, "password")
+        self.login_button = (By.ID, "login-button")
+        self.error_message = (By.XPATH, "//h3[@data-test='error']")
+
+        #homepage selectors
         self.logout_button = (By.ID, "logout_sidebar_link")
         self.error_message = (By.XPATH, "//h3[@data-test='error']")
         self.navbar_button = (By.ID, "react-burger-menu-btn")

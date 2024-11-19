@@ -1,4 +1,4 @@
-import pages_selectors.home_page_selectors
+import pages_selectors
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,7 +9,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
-class HomePage(pages_selectors.home_page_selectors.HomePageSelectors):
+class HomePage(pages_selectors.Selectors):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver

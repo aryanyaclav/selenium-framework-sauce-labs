@@ -1,4 +1,4 @@
-import pages_selectors.login_page_selectors
+import pages_selectors
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,7 +10,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 
-class LoginPage(pages_selectors.login_page_selectors.LoginPage_selectors):
+class LoginPage(pages_selectors.Selectors):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
